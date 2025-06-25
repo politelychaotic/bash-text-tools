@@ -1,45 +1,61 @@
 #!/bin/bash
 
 
-echo -e "cat out text:";
+echo -e "\ncat out text:";
 cat data.txt;
-echo -e "\n";
 
 sleep 5;
 
-echo -e "Use awk to print second column:";
+echo -e "\nUse awk to print second column:";
 awk '{print $2}' data.txt;
-echo -e "\n";
 
 sleep 5;
 
-echo -e "Use awk to print second column followed by first:";
+echo -e "\nUse awk to print second column followed by first:";
 awk '{print $2 "\t" $1}' data.txt;
-echo -e "\n";
 
 sleep 5;
 
-echo -e "Use awk to print second column followed by the first\nPIPE to sort by numerical order";
+echo -e "\nUse awk to print second column followed by the first\nPIPE to sort by numerical order";
 awk '{print $2 "\t" $1}' data.txt | sort -n;
-echo -e "\n";
+
 
 sleep 5;
 
-echo -e "cat text again";
+echo -e "\ncat text again";
 cat data.txt
-echo -e "\n";
+
 
 sleep 5;
 
-echo -e "Use sed to replace Orange with Red";
+echo -e "\nUse sed to replace Orange with Red";
 sed s/Orange/Red/ data.txt;
-echo -e "\n";
+
 
 sleep 5;
 
-echo -e "Use sed to replace Red with Orange";
+echo -e "\nUse sed to replace Red with Orange";
 sed s/Red/Orange/ data.txt;
-echo -e "\n";
+
+sleep 5;
+
+echo -e "\ncat out file again:";
+cat data.txt;
+
+sleep 5;
+
+echo -e "\nUse sort to sort first column(w/o column headers):";
+tail -n +2 | sort;
+
+sleep 5;
+
+echo -e "\nUse sort to sort column 2 by numerical order(w/o column headers):";
+tail -n +2 data.txt | sort -k2 -n;
+
+sleep 5;
+
+echo -e "\nUse sort to sort column 3 (w/o column headers):";
+tail -n +2 data.txt | sort -k3 -n;
 
 sleep 5;
 
