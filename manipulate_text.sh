@@ -46,7 +46,7 @@ sleep 5;
 
 echo -e "\nCreate a ENV Variable HEAD with the first line of data.txt stored";
 HEAD=$(head -n1 data.txt);
-echo -e "\nHEAD=$HEAD";
+echo -e "\nHeader is:\n$HEAD";
 
 sleep 5;
 
