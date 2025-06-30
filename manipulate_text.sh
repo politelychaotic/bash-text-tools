@@ -44,18 +44,24 @@ cat data.txt;
 
 sleep 5;
 
+echo -e "\nCreate a ENV Variable HEAD with the first line of data.txt stored";
+HEAD=$(head -n1 data.txt);
+echo -e "\nHEAD=$HEAD";
+
+sleep 5;
+
 echo -e "\nUse sort to sort first column(w/o column headers):";
-tail -n +2 | sort;
+echo; echo "$HEAD"; tail -n +2 data.txt | sort;
 
 sleep 5;
 
 echo -e "\nUse sort to sort column 2 by numerical order(w/o column headers):";
-tail -n +2 data.txt | sort -k2 -n;
+echo; echo "$HEAD"; tail -n +2 data.txt | sort -k2 -n;
 
 sleep 5;
 
 echo -e "\nUse sort to sort column 3 (w/o column headers):";
-tail -n +2 data.txt | sort -k3 -n;
+echo; echo "$HEAD"; tail -n +2 data.txt | sort -k3 -n;
 
 sleep 5;
 
